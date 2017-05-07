@@ -146,6 +146,6 @@ gulp.task('default', function() {
 ## Parameters 参数
 
 ### options
-#### type 指定分离类型，可以只分离出js或者css，默认都分离
+#### type <small>指定分离类型，可以只分离出js或者css，默认都分离</small>
 Type:`String`|`Array`,split type `js` or `css`,defalut value `['js','css']`
 
