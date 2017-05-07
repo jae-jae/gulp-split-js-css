@@ -10,16 +10,17 @@
     "type": "git",
     "url": "git+https://github.com/jae-jae/gulp-split-js-css.git"
   },
-  "author": "JaegerCode",
+  "author": "JaegerCode <JaegerCode@gmail.com>",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/jae-jae/gulp-split-js-css/issues"
   },
   "homepage": "https://github.com/jae-jae/gulp-split-js-css#readme",
-  "devDependencies": {
+  "dependencies": {
     "cheerio": "^0.22.0",
     "gulp-util": "^3.0.8",
     "object-assign": "^4.1.1",
+    "path": "^0.12.7",
     "through2": "^2.0.3"
   }
 }
