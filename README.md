@@ -88,7 +88,7 @@ gulp.task('default', function() {
 </body>
 </html>
 ```
-### Out
+### Out 输出结果
 
 `./dist/index.html`
 
@@ -146,6 +146,6 @@ gulp.task('default', function() {
 ## Parameters 参数
 
 ### options
-#### type
+#### type 指定分离类型，可以只分离出js或者css，默认都分离
 Type:`String`|`Array`,split type `js` or `css`,defalut value `['js','css']`
 
