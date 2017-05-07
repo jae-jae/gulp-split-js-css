@@ -1,0 +1,25 @@
+{
+  "name": "gulp-split-js-css",
+  "version": "1.0.0",
+  "description": "Gulp split js and css from html,gulp从html中分离出js和css",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jae-jae/gulp-split-js-css.git"
+  },
+  "author": "JaegerCode",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jae-jae/gulp-split-js-css/issues"
+  },
+  "homepage": "https://github.com/jae-jae/gulp-split-js-css#readme",
+  "devDependencies": {
+    "cheerio": "^0.22.0",
+    "gulp-util": "^3.0.8",
+    "object-assign": "^4.1.1",
+    "through2": "^2.0.3"
+  }
+}
