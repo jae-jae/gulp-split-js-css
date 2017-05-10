@@ -4,7 +4,8 @@ Gulp split js and css from html,gulp从html中分离出js和css
 ```shell
 npm install gulp-split-js-css
 ```
-## Usage
+## Usage 1
+
 `gulpfile.js`
 
 ```javascript
@@ -141,6 +142,48 @@ gulp.task('default', function() {
 	abbr[title] {
 	    border-bottom:1px dotted
 	}
+```
+
+## Usage 2
+```javascript
+var gulp = require('gulp');
+
+var sjc = require('gulp-split-js-css');
+
+//文件过滤
+var filter = require('gulp-filter');
+//在html中引用js和css
+var inject = require('gulp-inject');
+
+var foreach = require('gulp-foreach');
+
+gulp.task('default', function() {
+
+  return gulp.src('./src/*.html')
+    .pipe(foreach(function(streamX, file) {
+
+      var stream = streamX.pipe(sjc({
+        type: ['js', 'css']
+      }));
+
+      var jsFilter = filter('**/*.js');
+      var cssFilter = filter('**/*.css');
+      var htmlFilter = filter('**/*.html');
+
+      var jsStream = stream.pipe(jsFilter);
+      var cssStream = stream.pipe(cssFilter);
+      var htmlStream = stream.pipe(htmlFilter);
+
+      jsStream = jsStream.pipe(gulp.dest('dist/js'));
+      cssStream = cssStream.pipe(gulp.dest('dist/css'));
+
+      return htmlStream.pipe(inject(jsStream))
+        .pipe(inject(cssStream));
+
+    })).pipe(gulp.dest('./dist'));
+
+});
+
 ```
 
 ## Parameters 参数
