@@ -47,7 +47,7 @@ function splitHtml(html,opts)
 
 function getFileExt(path)
 {
-	return path.substr(path.indexOf('.')+1);
+	return path.split('.').pop();
 }
 
 module.exports = function (opts) {
