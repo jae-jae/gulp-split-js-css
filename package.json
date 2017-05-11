@@ -1,6 +1,6 @@
 {
   "name": "gulp-split-js-css",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Gulp split js and css from html,gulp从html中分离出js和css",
   "main": "index.js",
   "scripts": {

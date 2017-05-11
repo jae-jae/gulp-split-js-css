@@ -14,13 +14,14 @@ function splitFile(file, filename, contents) {
 	});
 }
 
-function getFilename(filepath) {
+function getFilename(filepath,opts) {
 	var basename = path.basename(filepath, path.extname(filepath));
-	return {
-		html: basename + '.html',
+	var names = {
 		js: basename + '.js',
 		css:basename + '.css'
 	};
+	names[opts.pageType] = basename + '.' + opts.pageType;
+	return names;
 }
 
 function splitHtml(html,opts)
@@ -40,8 +41,13 @@ function splitHtml(html,opts)
          });
 		$(val).remove();
 	}
-	rt['html'] = $.html();
+	rt[opts.pageType] = $.html();
 	return rt;
+}
+
+function getFileExt(path)
+{
+	return path.substr(path.indexOf('.')+1);
 }
 
 module.exports = function (opts) {
@@ -51,13 +57,14 @@ module.exports = function (opts) {
 			cb(null, file);
 			return;
 		}
-
+		
 		if (file.isStream()) {
 			cb(new gutil.PluginError('gulp-split-js-css', 'Streaming not supported'));
 			return;
 		}
 
-		var splitfile = getFilename(file.path);
+		opts.pageType = getFileExt(file.path);
+		var splitfile = getFilename(file.path,opts);
 
 		var split = splitHtml(file.contents.toString(),opts);
 
