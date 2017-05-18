@@ -18,6 +18,7 @@
   "homepage": "https://github.com/jae-jae/gulp-split-js-css#readme",
   "dependencies": {
     "cheerio": "^0.22.0",
+    "entities": "^1.1.1",
     "gulp-util": "^3.0.8",
     "object-assign": "^4.1.1",
     "path": "^0.12.7",

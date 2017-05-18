@@ -4,6 +4,7 @@ var gutil = require('gulp-util');
 var through = require('through2');
 var cheerio = require('cheerio');
 var oassign = require('object-assign');
+var entities = require("entities");
 
 function splitFile(file, filename, contents) {
 	return new gutil.File({
@@ -41,7 +42,7 @@ function splitHtml(html,opts)
          });
 		$(val).remove();
 	}
-	rt[opts.pageType] = $.html();
+	rt[opts.pageType] = entities.decodeHTML($.html());
 	return rt;
 }
 
