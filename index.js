@@ -29,7 +29,7 @@ function splitHtml(html,opts)
 {
 	let types = opts.type || ['js','css'];
 	typeof(types) == 'string' && (types = [types]);
-	let selMap = {'js': 'script:not(script[src])','css': 'style'};
+	let selMap = {'js': 'script:not(script[src],script[inline])','css': 'style:not(style[inline])'};
 	let $ = cheerio.load(html);
 	let rt = {};
 	for(let i in types)

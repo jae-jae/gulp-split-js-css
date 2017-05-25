@@ -63,6 +63,11 @@ gulp.task('default', function() {
 	}
 </style>
 
+<style type="text/css" inline>
+	.c-box{height:40px;width:100%;margin:150px auto;}
+</style>
+
+
 <!-- inject:css -->
 <!-- endinject -->
 
@@ -83,6 +88,12 @@ gulp.task('default', function() {
 	msg(str);
 </script>
 
+
+<script type="text/javascript" inline>
+	var str2 = 'string2';
+	msg(str2);
+</script>
+
 <!-- inject:js -->
 <!-- endinject -->
 
@@ -99,6 +110,10 @@ gulp.task('default', function() {
 <head>
 	<title>gulp-split-js-css</title>
 
+<style type="text/css" inline="">
+	.c-box{height:40px;width:100%;margin:150px auto;}
+</style>
+
 
 <!-- inject:css -->
 <link rel="stylesheet" href="/dist/css/index.css">
@@ -109,6 +124,10 @@ gulp.task('default', function() {
 
 <span>This is string.</span>
 
+<script type="text/javascript" inline="">
+	var str2 = 'string2';
+	msg(str2);
+</script>
 
 <!-- inject:js -->
 <script src="/dist/js/index.js"></script>
@@ -191,4 +210,6 @@ gulp.task('default', function() {
 ### type 
 Type:`String`|`Array`,split type `js` or `css`,defalut value `['js','css']`
 指定分离类型，可以只分离出js或者css，默认都分离
+
+**注**:标签加上`inline`属性后,将被跳过,不会被分离出来.
 
